@@ -53,13 +53,14 @@ class ListModule extends React.Component {
                     <Button
                         onClick={() => this.handle_click_button()}
                         variant="outline-success"
+                        size="sm"
                         block
                     >
                         UPDATE
                     </Button>
                     <hr />
                     {this.props.quests.length > 0 &&
-                        <Table striped bordered hover>
+                        <Table striped bordered hover size="sm">
                             {this.theadQuests()}
                             {this.tbodyQuests()}
                         </Table>
