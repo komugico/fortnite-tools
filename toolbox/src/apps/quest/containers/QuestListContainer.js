@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap';
 
+import HeaderModule from '../../shared/components/modules/HeaderModule';
+
 import * as actions from '../stores/questlist/actions';
 import ListModule from '../components/modules/ListModule';
 import MapModule from '../components/modules/MapModule';
@@ -14,6 +16,8 @@ class QuestListContainer extends React.Component {
     render() {
         return (
             <div>
+                <HeaderModule />
+                <br />
                 <Container fluid>
                     <Row>
                         <Col xl={3} lg={3} md={3} sm={12} xs={12}>
