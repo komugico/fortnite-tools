@@ -7,7 +7,7 @@ export const createInitState = () => {
     return {
         user: null,
         quests: [],
-        selectedQuest: null,
+        choicedQuest: null,
     }
 }
 
