@@ -29,6 +29,7 @@ class QuestListContainer extends React.Component {
                                 user={this.props.user}
                                 quests={this.props.quests}
                                 act_get_quests={this.props.act_get_quests}
+                                act_choice_quest={this.props.act_choice_quest}
                             />
                         </Col>
                         <Col xl={9} lg={9} md={9} sm={12} xs={12}>

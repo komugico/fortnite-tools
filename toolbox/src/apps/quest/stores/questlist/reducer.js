@@ -17,6 +17,10 @@ const reducer = (state=logics.createInitState(), action) => {
                 ...state,
                 quests: logics.getQuests(),
             }
+        case actions.CHOICE_QUEST:
+            let quest = logics.seachQuest(state.quests, action.questId);
+            alert("Quest #" + quest.id + " (" + quest.title + ") was clicked.");
+            return state;
         default:
             return state;
     }

@@ -30,15 +30,19 @@ class ListModule extends React.Component {
 
     trQuests(row) {
         return (
-            <tr>
+            <tr onClick={() => this.handle_click_tr(row.id)}>
                 <td>{ row.id }</td>
                 <td>{ row.title }</td>
             </tr>
         )
     }
 
-    handle_click() {
+    handle_click_button() {
         this.props.act_get_quests();
+    }
+
+    handle_click_tr(questId) {
+        this.props.act_choice_quest(questId);
     }
 
     render() {
@@ -47,7 +51,7 @@ class ListModule extends React.Component {
                 <Card.Header><b>Quests</b></Card.Header>
                 <Card.Body>
                     <Button
-                        onClick={() => this.handle_click()}
+                        onClick={() => this.handle_click_button()}
                         variant="outline-success"
                         block
                     >
