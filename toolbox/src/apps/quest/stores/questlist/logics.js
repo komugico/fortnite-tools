@@ -8,4 +8,13 @@ export const createInitState = () => {
         user: null,
         quests: [],
     }
-} 
+}
+
+export const getQuests = () => {
+    let quests = [{
+        id: 0,
+        title: "dummy quest"
+    }];
+    alert("未実装");
+    return quests;
+}

@@ -12,6 +12,11 @@ const reducer = (state=logics.createInitState(), action) => {
     switch (action.type) {
         case actions.INIT_STATE:
             return logics.createInitState();
+        case actions.GET_QUESTS:
+            return {
+                ...state,
+                quests: logics.getQuests(),
+            }
         default:
             return state;
     }
