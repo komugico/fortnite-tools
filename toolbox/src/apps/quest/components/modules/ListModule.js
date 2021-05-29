@@ -29,6 +29,7 @@ class ListModule extends React.Component {
                     {this.props.quests.length > 0 &&
                         <TableBlock
                             quests={this.props.quests}
+                            act_choice_quest={this.props.act_choice_quest}
                         />
                     }
                 </Card.Body>
