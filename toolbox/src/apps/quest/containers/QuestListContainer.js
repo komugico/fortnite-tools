@@ -13,6 +13,10 @@ class QuestListContainer extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.act_init_state();
+    }
+
     render() {
         return (
             <div>
@@ -21,7 +25,10 @@ class QuestListContainer extends React.Component {
                 <Container fluid>
                     <Row>
                         <Col xl={3} lg={3} md={3} sm={12} xs={12}>
-                            <ListModule />
+                            <ListModule
+                                user={this.props.user}
+                                quests={this.props.quests}
+                            />
                         </Col>
                         <Col xl={9} lg={9} md={9} sm={12} xs={12}>
                             <MapModule />

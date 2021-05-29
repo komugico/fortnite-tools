@@ -2,3 +2,10 @@
 /* Import                                                                     */
 /* ========================================================================== */
 import * as C from './constants';
+
+export const createInitState = () => {
+    return {
+        user: null,
+        quests: [],
+    }
+} 
