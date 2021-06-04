@@ -24,16 +24,19 @@ class QuestListContainer extends React.Component {
                 <br />
                 <Container fluid>
                     <Row>
-                        <Col xl={3} lg={3} md={3} sm={12} xs={12}>
+                        <Col xl={3} lg={4} md={4} sm={12} xs={12}>
                             <ListModule
                                 user={this.props.user}
                                 quests={this.props.quests}
                                 act_get_quests={this.props.act_get_quests}
                                 act_choice_quest={this.props.act_choice_quest}
                             />
+                            <br />
                         </Col>
-                        <Col xl={9} lg={9} md={9} sm={12} xs={12}>
-                            <MapModule />
+                        <Col xl={9} lg={8} md={8} sm={12} xs={12}>
+                            <MapModule
+                                choicedQuest={this.props.choicedQuest}
+                            />
                         </Col>
                     </Row>
                 </Container>
