@@ -30,6 +30,7 @@ class QuestListContainer extends React.Component {
                                 quests={this.props.quests}
                                 act_get_quests={this.props.act_get_quests}
                                 act_choice_quest={this.props.act_choice_quest}
+                                act_async_get_quests={this.props.act_async_get_quests}
                             />
                             <br />
                         </Col>

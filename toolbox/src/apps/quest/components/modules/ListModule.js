@@ -25,6 +25,11 @@ class ListModule extends React.Component {
                     >
                         UPDATE
                     </Button>
+                    <Button
+                        onClick={() => this.props.act_async_get_quests()}
+                    >
+                        DEBUG
+                    </Button>
                     <hr />
                     {this.props.quests.length > 0 &&
                         <TableBlock
