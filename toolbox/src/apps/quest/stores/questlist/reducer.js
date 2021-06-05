@@ -17,6 +17,11 @@ const reducer = (state=logics.createInitState(), action) => {
                 ...state,
                 quests: logics.getQuests(),
             }
+        case actions.SET_QUESTS:
+            return {
+                ...state,
+                quests: action.quests
+            }
         case actions.CHOICE_QUEST:
             let quest = logics.seachQuest(state.quests, action.questId);
             return {

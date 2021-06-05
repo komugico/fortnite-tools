@@ -39,12 +39,13 @@ export const act_choice_quest = (questId) => ({
 export const act_async_get_quests = () => {
     return dispatch => {
         axios
-        .get('https://fortnite-json-server.herokuapp.com/posts', {
+        .get('http://localhost:3030/questlist', {
             
         })
         .then(res => {
             alert("success");
             console.dir(res.data);
+            dispatch(act_set_quests(res.data));
         })
         .catch(err => {
             alert("error");
