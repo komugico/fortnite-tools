@@ -40,8 +40,8 @@ class MapModule extends React.Component {
 
     leafletMarkers() {
         if (this.props.choicedQuest) {
-            let markers = this.props.choicedQuest.points.map((point) => {
-                return this.marker(point);
+            let markers = this.props.choicedQuest.points.map((point, idx) => {
+                return this.marker(point, idx);
             });
             return markers;
         }
@@ -50,10 +50,10 @@ class MapModule extends React.Component {
         }
     }
 
-    marker(point) {
+    marker(point, idx) {
         let markerPosition = [point.x, point.y];
         return (
-            <Marker position={markerPosition}>
+            <Marker position={markerPosition} key={idx}>
                 <Popup>
                     <a onClick={() => this.handleOpen(point.imgUrl)} className="point-marker">
                         {point.location}

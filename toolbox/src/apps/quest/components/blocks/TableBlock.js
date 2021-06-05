@@ -30,7 +30,7 @@ class TableBlock extends React.Component {
 
     trQuests(row) {
         return (
-            <tr onClick={() => this.handle_click_tr(row.id)}>
+            <tr onClick={() => this.handle_click_tr(row.id)} key={row.id}>
                 <td>{ row.id }</td>
                 <td>{ row.title }</td>
             </tr>
