@@ -32,7 +32,7 @@ class TableBlock extends React.Component {
         return (
             <tr onClick={() => this.handle_click_tr(row.id)} key={row.id}>
                 <td>{ row.id }</td>
-                <td>{ row.title }</td>
+                <td>{ row.questName }</td>
             </tr>
         )
     }

@@ -1,5 +1,6 @@
 import time
 import json
+import math
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import chromedriver_binary
@@ -8,13 +9,13 @@ from bs4 import BeautifulSoup
 def scrape():
     urllist = get_urllist()
     data = {
-        "quests": []
+        "questlist": []
     }
     for idx, url in enumerate(urllist):
         soup = get_html_as_soup(url)
         if soup:
             quest = analyze_soup(soup, idx)
-            data["quests"].append(quest)
+            data["questlist"].append(quest)
     with open("questlist.json", mode="wt", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
@@ -80,6 +81,8 @@ def get_markers(soup):
             "id": idx,
             "longtitude": x_to_longtitude(x, w),
             "latitude": y_to_latitude(y, h),
+            "x": x,
+            "y": y,
             "place": bs_place.text,
             "imageUrl": bs_image["href"]
         })
@@ -87,11 +90,12 @@ def get_markers(soup):
 
 # 座標から経度へ変換
 def x_to_longtitude(x, w):
-    return "{:.2f}".format((x - w / 2) / w * 180)
+    return "{:.2f}".format(((x - w / 2) / w) * 180 * 2)
 
 # 座標から緯度へ変換
 def y_to_latitude(y, h):
-    return "{:.2f}".format((y - h / 2) / h * 85)
+    phi = (180 * 2 * math.atan(math.exp((2 * y / h - 1) * math.pi * -1))) / math.pi - 90
+    return "{:.2f}".format(phi)
 
 if __name__ == "__main__":
     scrape()
